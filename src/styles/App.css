@@ -1,0 +1,444 @@
+@font-face {
+    font-family: "Satoshi";
+    src: url("../assets/fonts/satoshi/Satoshi-Black.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("../assets/fonts/satoshi/Satoshi-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("../assets/fonts/satoshi/Satoshi-Medium.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("../assets/fonts/satoshi/Satoshi-Regular.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("../assets/fonts/satoshi/Satoshi-Light.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Satoshi";
+}
+
+:root {
+    --main: #45B975;
+    --black: #303030;
+}
+
+#root {
+    display: flex;
+}
+
+.App {
+    display: flex;
+    padding: 30px 100px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.yummy {
+    color: var(--main);
+    font-weight: 700;
+}
+
+.yummyIcon {
+    height: 50px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__text {
+    font-size: 65px;
+    color: #303030;
+    margin-top: 120px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sort__wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #F4F4F4;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 40px;
+    width: 380px;
+}
+
+.sort {
+    padding: 7px 25px;
+    cursor: pointer;
+    color: #303030;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.sort__active {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;
+}
+
+.search__wrapper {
+    width: 800px;
+}
+
+.searchInput {
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url('../assets/images/search-icon.svg');
+    background-position: center left 30px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    padding: 16px 25px 16px 70px;
+    background-color: #F7F7F7;
+    margin-top: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+}
+
+.searchInput::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: #C6C6C6;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--main);
+    border-bottom-color: var(--black);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin-top: 80px;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.noResult {
+    display: flex;
+    justify-content: center;
+}
+
+.dishList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin: 80px 0 30px;
+}
+
+.dish-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+  
+.dish-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+  
+.dish-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+.dish-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 500ms ease, transform 500ms ease;
+} 
+
+.dishItem {
+    padding: 15px 40px 15px 20px;
+    background-color: white;
+    color: #303030;
+    cursor: pointer;
+    border-radius: 18px;
+    text-wrap: nowrap;
+    margin-right: 20px;
+    transition: .2s;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.dishItem:hover {
+    background-color: var(--main);
+    color: white;
+}
+
+
+.dishItemImg {
+    height: 50px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.dishItemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.dishItemTitle {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.dishItemTime {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.cardTop {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.cardImg {
+    height: 150px;
+    margin-right: 50px;
+    border-radius: 16px;
+}
+
+.cardTopRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+.cardSaveIcon {
+    height: 30px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.cardNutrients {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardBottom {
+    display: flex;
+}
+
+.cardInstructions {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    width: 400px;
+}
+
+.cardIngredients {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-enter {
+    opacity: 0;
+    transform: translateY(5px);
+}
+.card-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.card-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card-exit-active {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+@media (max-width: 480px) {
+    .App {
+        padding: 30px 50px;
+    }
+    .yummy {
+        font-size: 25px;
+    }
+    .yummy-icon {
+        height: 40px;
+    }
+    .search__wrapper {
+        width: 350px;
+    }
+    .main__text {
+        font-size: 50px;
+        margin-top: 80px;
+    }
+    .sort__wrapper {
+        width: 300px;
+    }
+    .sort {
+        font-size: 14px;
+        padding: 7px 15px;
+    }
+    .dishItem {
+        padding: 10px 30px 10px 10px;
+        border-radius: 12px;
+    }
+    .dishItemTitle {
+        font-size: 14px;
+    }
+    .dishItemImg {
+        height: 40px;
+    }
+    .cardImg {
+        height: 100px;
+        margin-right: 25px;
+    } 
+    .card {
+        padding: 10px;
+    }
+    .cardTitle {
+        width: 100px;
+    }
+    .cardTitle h1 {
+        font-size: 20px;
+    }
+    .cardNutrients p {
+        font-size: 12px;
+    }
+    .cardSaveIcon {
+        height: 20px;
+    }
+    .cardInstructions {
+        margin-right: 20px;
+        width: 150px;
+    }
+    .cardInstructions p {
+        font-size: 12px;
+    }
+    .cardIngredients p {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .App {
+        padding: 30px 80px;
+    }
+    .yummy {
+        font-size: 28px;
+    }
+    .yummy-icon {
+        height: 52px;
+    }
+    .search__wrapper {
+        width: 450px;
+    }
+    .main__text {
+        font-size: 55px;
+        margin-top: 100px;
+    }
+    .dishItemTitle {
+        font-size: 18px;
+    }
+    .dishItemImg {
+        height: 45px;
+    }
+    .cardImg {
+        height: 150px;
+        margin-right: 25px;
+    } 
+    .card {
+        padding: 15px;
+    }
+    .cardTitle {
+        width: 150px;
+    }
+    .cardTitle h1 {
+        font-size: 24px;
+    }
+    .cardNutrients p {
+        font-size: 14px;
+    }
+    .cardSaveIcon {
+        height: 25px;
+    }
+    .cardInstructions {
+        margin-right: 20px;
+        width: 300px;
+    }
+    .cardInstructions p {
+        font-size: 14px;
+    }
+    .cardIngredients p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .search__wrapper {
+        width: 700px;
+    }
+}
