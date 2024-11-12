@@ -1,3 +1,8 @@
+# Brief Description
+
+This app is made by Yelaman Kulzhanov, dishes recipe informations are showed and some extra functionalities like save, filter, search are included.
+You can check the dishes' ingredients and instructions as well.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

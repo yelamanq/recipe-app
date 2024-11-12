@@ -17,12 +17,12 @@ function App() {
   const [mySaved, setMySaved] = useState(() => JSON.parse(localStorage.getItem('mySaved')) || []);
 
   const [selectedDish, setSelectedDish] = useState(null);
-    const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
-    const openDishCard = (dish) => {
-        setSelectedDish(dish);
-        setModalVisible(true);
-    };
+  const openDishCard = (dish) => {
+    setSelectedDish(dish);
+    setModalVisible(true);
+  };
 
   const [fetchDishes, isDishesLoading, dishError] = useFetching( async() => {
     if (filter.sort === 'dishName') {

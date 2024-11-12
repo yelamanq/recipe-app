@@ -4,7 +4,7 @@ export default class RecipeService {
     static async getByDishName(dishName) {
         const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch', {
             params: {
-                apiKey: '28a6cea647384af7b42622a2d40d6ada',
+                apiKey: 'dcb2e71edd534204b9d81a452935e029',
                 query: dishName,
                 fillIngredients: true,
                 excludeIngredients: true,
@@ -18,7 +18,7 @@ export default class RecipeService {
     static async getByIngredients(ingredients) {
         const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', {
             params: {
-                apiKey: '28a6cea647384af7b42622a2d40d6ada',
+                apiKey: 'dcb2e71edd534204b9d81a452935e029',
                 ingredients: ingredients,
             }
         })
@@ -27,7 +27,7 @@ export default class RecipeService {
     static async getByMySaved(id) {
         const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information`, {
             params: {
-                apiKey: '28a6cea647384af7b42622a2d40d6ada',
+                apiKey: 'dcb2e71edd534204b9d81a452935e029',
                 id: id
             }
         })
